@@ -16,6 +16,8 @@
                 </div>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
         </form>
         <div class="d-flex align-items-center">
             <strong>Subiendo video...</strong>
