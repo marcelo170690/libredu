@@ -25,7 +25,7 @@
                         <label for="archivo"></label>
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Subir Video</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Subir Video</button>
                     <button type="button" class="btn btn-secondary btn-lg btn-block">Cancelar</button>
                 </form>
             </div>
