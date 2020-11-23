@@ -8,20 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="POST">
-            @csrf
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="card mt-3 shadow-lg">
+            <div class="card-header">
+                Nuevo Video
             </div>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-        </form>
-        <div class="d-flex align-items-center">
-            <strong>Subiendo video...</strong>
-            <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+            <div class="card-body">
+                <form action="" method="POST">
+                    @csrf
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Título</span>
+                        </div>
+                        <input type="text" name="video" class="form-control" placeholder="Título">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-right">
+                <button type="button" class="btn btn-secondary">Cancelar</button>
+                <button type="button" class="btn btn-success">Subir Video</button>
+            </div>
         </div>
     </div>
 </body>
