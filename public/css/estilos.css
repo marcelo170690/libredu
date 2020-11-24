@@ -1,0 +1,34 @@
+body{
+    font-family: sans-serif;
+}
+
+.title{
+    text-align: center;
+    color: #007bff;
+    margin: 40px;
+}
+
+.form-container{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.form-container .dropzone{
+    border: 2px dashed #c3c3c3;
+    padding: 10px;
+}
+
+.form-container .icon i{
+    font-size: 3em;
+    text-align: center;
+    color: #696767;
+    background-color: #dfdddd;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.form-container h2{
+    color: #40405b;
+}
