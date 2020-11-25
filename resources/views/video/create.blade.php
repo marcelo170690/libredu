@@ -17,28 +17,25 @@
             </div>
             <div class="card-body">
                 <div class="form-container">
-                    <form class="dropzone" id="FormUploadFile" action="#" method="POST">
+                    <form action="#" class="dropzone" id="my-dropzone">
                         <div class="dz-message">
                             <div class="icon">
-                                <i class="fas fa-cloud-upload-alt"></i>
+                                <img src="/img/upload.png" style="width: 80px; height: 80px;">
                             </div>
-                            <h2>Arrastra tus videos aqui</h2>
+                            <h3>Arrastra tus videos aqui</h3>
                         </div>
                     </form>
-                    
-                    <form action="" method="POST">
-                    <div class="input-group">
-                        <input type="text" name="video" class="form-control" placeholder="Título" required>
-                    </div>
-                    <div class="input-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripcion"></textarea>
+                    <div class="form-group"></div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Titulo" required>
                     </div>
                     <div class="form-group">
-                        <label for="archivo"></label>
+                        <textarea class="form-control" placeholder="Descripcion" ></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Subir Video</button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Cancelar</button>
-                    </form>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" id="submit-all">Subir video</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="submit-all">Cancelar</button>
+                    </div>
                 </div>
             </div>
             <div class="card-footer text-right">
@@ -46,5 +43,11 @@
         </div>
     </div>
     <script src="/js/dropzone.js"></script>
+    <script src="/js/midropzone.js"></script>
+    <script>
+        Dropzone.options.FormUploadFile = {
+            acceptedFiles:"video/*"
+        }
+    </script>
 </body>
 </html>
