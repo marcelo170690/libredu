@@ -13,11 +13,6 @@ img .img-upload{
     margin: 40px;
 }
 
-.form-container{
-    width: 30%;
-    margin: 0 auto;
-}
-
 .form-container .dropzone{
     border: 2px dashed #c3c3c3;
     padding: 10px;

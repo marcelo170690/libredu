@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class VideoController extends Controller
 {
@@ -14,7 +15,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-
+        $videos = Video::all();
+        return view('video.index', compact('videos'));
     }
 
     /**
@@ -35,7 +37,16 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $url = '';
+        if ($request->has('video'))
+            $url = Storage::disk('local')->put('video', $request->file('video'));
+        $video = new Video();
+        $video->name = $request->name;
+        $video->description = $request->description;
+        $video->url = $url?$url:'urlDefualt';
+        $video->save();
+
+        return redirect()->route('video.index');
     }
 
     /**
@@ -82,4 +93,5 @@ class VideoController extends Controller
     {
         //
     }
+
 }

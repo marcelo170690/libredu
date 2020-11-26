@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('video', [VideoController::class, 'create'])->name('video.create');
+Route::get('video/create', [VideoController::class, 'create'])->name('video.create');
+Route::post('video/store', [VideoController::class, 'store'])->name('video.store');
+Route::get('video/index', [VideoController::class, 'index'])->name('video.index');
