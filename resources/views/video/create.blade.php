@@ -45,10 +45,5 @@
     </div>
     <script src="/js/dropzone.js"></script>
     <script src="/js/midropzone.js"></script>
-    <script>
-        Dropzone.options.FormUploadFile = {
-            acceptedFiles: "video/*"
-        }
-    </script>
 </body>
 </html>
