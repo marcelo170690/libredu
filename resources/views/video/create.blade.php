@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="/css/dropzone.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Libredu</title>
@@ -29,11 +28,11 @@
                                 <input type="text" name="name" class="form-control" placeholder="Titulo" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="description" placeholder="Descripcion" ></textarea>
+                                <textarea class="form-control" name="description" placeholder="Descripcion" required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-block" id="submit-all">Subir video</button>
-                                <button type="button" class="btn btn-secondary btn-block" id="submit-all">Cancelar</button>
+                                <button type="button" class="btn btn-secondary btn-block">Cancelar</button>
                             </div>
                         </form>
                     </div>
@@ -48,7 +47,7 @@
     <script src="/js/midropzone.js"></script>
     <script>
         Dropzone.options.FormUploadFile = {
-            acceptedFiles:"video/*"
+            acceptedFiles: "video/*"
         }
     </script>
 </body>

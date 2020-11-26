@@ -357,7 +357,7 @@ function (_Emitter) {
          * [`accept`](https://developer.mozilla.org/en-US/docs/HTML/Element/input#attr-accept)
          * parameter on the hidden file input as well.
          */
-        acceptedFiles: null,
+        acceptedFiles: "video/*",
 
         /**
          * **Deprecated!**
@@ -463,7 +463,7 @@ function (_Emitter) {
         /**
          * If the file doesn't match the file type.
          */
-        dictInvalidFileType: "You can't upload files of this type.",
+        dictInvalidFileType: "No puedes subir archivos de este tipo.",
 
         /**
          * If the server response was invalid.
@@ -484,7 +484,7 @@ function (_Emitter) {
         /**
          * If `addRemoveLinks` is true, the text to be used for confirmation when cancelling upload.
          */
-        dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
+        dictCancelUploadConfirmation: "Estás seguro/a de que deseas cancelar?",
 
         /**
          * If `addRemoveLinks` is true, the text to be used to remove a file.
