@@ -37,6 +37,7 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $url = '';
         if ($request->has('video'))
             $url = Storage::disk('local')->put('video', $request->file('video'));
@@ -91,7 +92,8 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        $video->delete();
+        return redirect()->route('video.index');
     }
 
 }
