@@ -20,17 +20,18 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="card mt-3 shadow-lg">
-                    <div class="card-header">
-                        <h1 class="titulo">Subir Video</h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-container">
-                            <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <div class="content">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+            <div class="card mt-3 shadow-lg">
+                <div class="card-header">
+                    <h1>Modificar Video</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-container">
+                        <form action="{{ route('video.update',$video->id) }}" method="post" enctype="multipart/form-data">
+                            @method('PUT')
+                            @csrf
+                            <div class="content">
                                     <div class="box">
                                         <input type="file" name="video" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />
                                         <label for="file-5">
@@ -43,22 +44,22 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Titulo" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" name="description" placeholder="Descripcion" required></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block" id="submit-all">Subir video</button>
-                                    <a href="{{route('video.index')}}" class="btn btn-secondary btn-block">Cancelar</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="card-footer text-right">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" value="{{ $video->name }}" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="description" required>{{ $video->description }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block" id="submit-all">Subir video</button>
+                                <a href="{{route('video.index')}}" class="btn btn-secondary btn-block">Cancelar</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <div class="card-footer text-right">
+                </div>
+            </div>
             <div class="col-md-3"></div>
         </div>
     </div>

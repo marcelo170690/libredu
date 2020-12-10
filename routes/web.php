@@ -21,4 +21,7 @@ Route::get('/', function () {
 Route::get('video/create', [VideoController::class, 'create'])->name('video.create');
 Route::post('video/store', [VideoController::class, 'store'])->name('video.store');
 Route::get('video/index', [VideoController::class, 'index'])->name('video.index');
+Route::get('video/edit/{video}', [VideoController::class, 'edit'])->name('video.edit');
+Route::put('video/{video}', [VideoController::class, 'update'])->name('video.update');
+Route::get('video/show/{video}', [VideoController::class, 'show'])->name('video.show');
 Route::delete('video/destroy/{video}', [VideoController::class, 'destroy'])->name('video.destroy');

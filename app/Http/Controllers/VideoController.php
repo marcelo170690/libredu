@@ -58,7 +58,7 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        return view('video.show',compact('video'));
     }
 
     /**
@@ -69,7 +69,7 @@ class VideoController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        return view('video.edit',compact('video'));
     }
 
     /**
