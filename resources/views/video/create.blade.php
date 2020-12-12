@@ -62,6 +62,6 @@
             <div class="col-md-3"></div>
         </div>
     </div>
-    <script src="js/custom-file-input.js"></script>
+    <script src="/js/custom-file-input.js"></script>
 </body>
 </html>

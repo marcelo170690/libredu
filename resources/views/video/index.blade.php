@@ -17,7 +17,7 @@
                         <h1>Lista de videos</h1>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
@@ -46,12 +46,8 @@
                 </div>
                 <a href="{{route('video.create')}}" class="btn btn-secondary">Subir Video</a>
             </div>
-            
+            <div class="col-md-1"></div>
         </div>
-        
     </div>
-
-        
-   </div>
 </body>
 </html>
