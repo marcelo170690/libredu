@@ -24,5 +24,20 @@ img .img-upload{
 
 h1{
     text-align: center;
-    font-size: 40px;
+    color: #4D2016;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+h2{
+    text-align: center;
+    font-weight: lighter;
+}
+h5{
+    text-align: center;
+    color: red;
+}
+
+img{
+    width: 90px;
+    height: 90px;
 }
