@@ -44,8 +44,8 @@
                             {{ __('Videos') }}
                         </x-jet-dropdown-link>
 
-                        <x-jet-dropdown-link href="{{ route('video.index') }}">
-                            {{ __('Nuevo videos') }}
+                        <x-jet-dropdown-link href="{{ route('video.create') }}">
+                            {{ __('Nuevo video') }}
                         </x-jet-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>

@@ -1,5 +1,5 @@
-@extends('layout.app')
-@section('contentBody')
+<x-app-layout>
+    <x-slot name="header">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/component.css" />
     <div class="row">
@@ -76,15 +76,6 @@
         </form>
         <div class="col-md-3"></div>
     </div>
-@endsection
-
-@section('contentScript')
-    <script>
-        (function(e,t,n){
-            var r=e.querySelectorAll("html")[0];
-            r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")
-        })
-        (document,window,0);
-    </script>
-    <script src="/js/custom-file-input.js"></script>
-@endsection
+</x-slot>
+<script src="/js/custom-file-input.js"></script>
+</x-app-layout>

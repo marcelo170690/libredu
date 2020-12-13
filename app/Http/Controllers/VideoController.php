@@ -101,6 +101,8 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
+        //eliminacion fisica del video
+        Storage::delete($video->url);
         $video->delete();
         return redirect()->route('video.index');
     }
