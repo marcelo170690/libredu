@@ -63,11 +63,11 @@
                         </div>
                         <div class="card-footer text-right">
                             <a href="{{route('video.index')}}" class="btn btn-secondary">
-                                <img src="/img/close.png" alt="">
+                                <img src="/img/close.png" alt="close"/>
                                 SALIR
                             </a>
                             <button type="submit" class="btn btn-success" id="submit-all">
-                                <img src="/img/save.png" alt="">
+                                <img src="/img/save.png" alt="save"/>
                                 AGREGAR
                             </button>
                         </div>
