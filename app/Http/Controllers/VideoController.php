@@ -15,7 +15,7 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $videos = Video::all();
+        $videos = Video::orderByDesc('id')->get();
         return view('video.index', compact('videos'));
     }
 
@@ -37,13 +37,12 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $url = '';
-        if ($request->has('video'))
-            $url = Storage::disk('local')->put('video', $request->file('video'));
+        $request->validate(Video::rules());
+        $url = Storage::disk('local')->put('video', $request->file('video'));
         $video = new Video();
         $video->name = $request->name;
         $video->description = $request->description;
-        $video->url = $url?$url:'urlDefualt';
+        $video->url = $url;
         $video->save();
 
         return redirect()->route('video.index');
@@ -57,7 +56,7 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        return view('video.show',compact('video'));
     }
 
     /**
@@ -68,7 +67,7 @@ class VideoController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        return view('video.edit', compact('video'));
     }
 
     /**
@@ -80,7 +79,18 @@ class VideoController extends Controller
      */
     public function update(Request $request, Video $video)
     {
-        //
+        $request->validate(Video::rules(false));
+        if ($request->has('video')) {
+            //eliminar
+            Storage::delete($video->url);
+            $url = Storage::disk('local')->put('video', $request->file('video'));
+            $video->url = $url;
+        }
+        $video->name = $request->name;
+        $video->description = $request->description;
+        $video->save();
+
+        return redirect()->route('video.index');
     }
 
     /**
@@ -91,7 +101,8 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        $video->delete();
+        return redirect()->route('video.index');
     }
 
 }
