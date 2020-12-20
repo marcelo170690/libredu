@@ -36,6 +36,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <div class="btn-group">
+                                    <a href="{{ route('video.show', $video->id) }}" class="btn btn-outline-primary">Ver</a>
                                     <a href="{{ route('video.edit', $video->id) }}" class="btn btn-outline-primary">Editar</a>
                                     <button
                                         type="submit"
