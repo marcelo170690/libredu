@@ -1,15 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Administrar Videos') }}
-        </h2>
-    </x-slot>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/component.css" />
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-        <form action="{{ route('video.update', $video->id) }}" method="post" enctype="multipart/form-data">
+    <br>
+    <div class="d-flex justify-content-center">
+        <form action="{{ route('video.update', $video->id) }}" method="post" enctype="multipart/form-data" style="width: 600px;">
             @csrf
             @method('PUT')
             <div class="card shadow-lg">
@@ -78,7 +72,6 @@
                 </div>
             </div>
         </form>
-        <div class="col-md-3"></div>
     </div>
     <script src="/js/custom-file-input.js"></script>
 </x-app-layout>

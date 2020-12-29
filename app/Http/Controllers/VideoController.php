@@ -38,14 +38,14 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $request->validate(Video::rules());
-        $url = Storage::disk('public')->put('video', $request->file('video'));
+        $url = Storage::disk('videos')->put('video', $request->file('video'));
         $video = new Video();
         $video->name = $request->name;
         $video->description = $request->description;
         $video->url = $url;
         $video->save();
 
-        return redirect()->route('video.index')->with('Mensaje', 'El video se guardó correctamente');
+        return redirect()->route('video.index');
     }
 
     /**
@@ -104,7 +104,7 @@ class VideoController extends Controller
     {
         //eliminacion fisica del video
         //Storage::delete($video->url);
-        Storage::disk('public')->delete($video->url);
+        Storage::disk('videos')->delete($video->url);
         $video->delete();
         return redirect()->route('video.index');
     }
