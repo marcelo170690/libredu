@@ -1,10 +1,10 @@
 <x-app-layout>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/component.css" />
+    <link rel="stylesheet" href="/css/component.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     {{-- <x-slot name="header">
 
     </x-slot> --}}
-    <br>
     <br>
     <br>
     <div class="d-flex justify-content-center">
@@ -18,7 +18,7 @@
                     <div class="form-container">
                         <div class="content">
                             <div class="text-center">
-                                <input type="file" name="video" id="file-5" class="inputfile inputfile-4"/>
+                                <input type="file" name="video" id="file-5" class="inputfile inputfile-4" accept="video/*" required/>
                                 <label for="file-5">
                                     <figure >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
@@ -55,6 +55,7 @@
                                 @error('title') is-invalid @enderror"
                                 name="description"
                                 placeholder="Descripcion"
+                                id="description"
                             >{{ old('description') }}</textarea>
                             @error('description')
                                 <small id="description" class="form-text text-danger">
@@ -69,7 +70,7 @@
                         <img src="/img/close.png" alt="close"/>
                         SALIR
                     </a>
-                    <button type="submit" class="btn btn-success" id="submit-all">
+                    <button type="submit" class="btn btn-success" id="submit-all" data-toggle="modal" data-target="#loading" disabled>
                         <img src="/img/save.png" alt="save"/>
                         AGREGAR
                     </button>
@@ -78,4 +79,17 @@
         </form>
     </div>
     <script src="/js/custom-file-input.js"></script>
+    <script src="/js/validate_input.js"></script>
 </x-app-layout>
+  <!-- The Modal -->
+<div class="modal" id="loading">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body d-flex align-items-center">
+                <strong>Guardando video. Por favor espere...</strong>
+                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+            </div>
+        </div>
+    </div>
+</div>

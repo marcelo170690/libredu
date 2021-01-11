@@ -1,9 +1,8 @@
 <x-app-layout>
     <br>
     <br>
-    <br>
     <div class="d-flex justify-content-center">
-        <div class="card" style="width: 70%">
+        <div class="card shadow-lg" style="width: 80%">
             <div class="row no-gutters">
                 <div class="col-md-3">
                     <div class="card-header">

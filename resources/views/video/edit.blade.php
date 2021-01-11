@@ -2,6 +2,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/component.css" />
     <br>
+    <br>
     <div class="d-flex justify-content-center">
         <form action="{{ route('video.update', $video->id) }}" method="post" enctype="multipart/form-data" style="width: 600px;">
             @csrf
