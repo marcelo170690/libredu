@@ -45,7 +45,7 @@ class VideoController extends Controller
         $video->url = $url;
         $video->save();
 
-        return redirect()->route('video.index');
+        return redirect()->route('video.index')->with('status','El video fue registrado con éxito.');
     }
 
     /**
@@ -91,7 +91,7 @@ class VideoController extends Controller
         $video->description = $request->description;
         $video->save();
 
-        return redirect()->route('video.index');
+        return redirect()->route('video.index')->with('status','El video fue actualizado con éxito.');
     }
 
     /**
@@ -106,7 +106,7 @@ class VideoController extends Controller
         //Storage::delete($video->url);
         Storage::disk('videos')->delete($video->url);
         $video->delete();
-        return redirect()->route('video.index');
+        return redirect()->route('video.index')->with('status','El video fue eliminado con éxito.');
     }
 
 }
